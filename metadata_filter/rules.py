@@ -181,6 +181,13 @@ SUFFIX_FILTER_RULES: List[FilterRule] = [
     FilterRule(source=r"/-\s(Remix|VIP)$/i", target=r"(\1)"),
 ]
 
+TRIM_WHITESPACE_FILTER_RULES: List[FilterRule] = [
+    # Trim whitespaces (beginning)
+    FilterRule(source=r"/^\s+/", target=""),
+    # Trim whitespaces (end)
+    FilterRule(source=r"/\s+$/", target=""),
+]
+
 __all__ = [
     "FilterRule",
     "CLEAN_EXPLICIT_FILTER_RULES",
@@ -190,6 +197,7 @@ __all__ = [
     "REMASTERED_FILTER_RULES",
     "SUFFIX_FILTER_RULES",
     "TRIM_SYMBOLS_FILTER_RULES",
+    "TRIM_WHITESPACE_FILTER_RULES",
     "VERSION_FILTER_RULES",
     "YOUTUBE_TRACK_FILTER_RULES",
 ]
