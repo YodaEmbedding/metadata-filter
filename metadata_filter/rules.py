@@ -181,6 +181,13 @@ SUFFIX_FILTER_RULES: List[FilterRule] = [
     FilterRule(source=r"/-\s(Remix|VIP)$/i", target=r"(\1)"),
 ]
 
+ORIGIN_FILTER_RULES: List[FilterRule] = [
+    # For The First Time In Forever (From "Frozen")
+    FilterRule(source=r"/\s\([fF]rom [^\)]+\)/i", target=""),
+    # Vuelie - From "Frozen"/Score
+    FilterRule(source=r"/-\sFrom\s[^-]+$/i", target=""),
+]
+
 TRIM_WHITESPACE_FILTER_RULES: List[FilterRule] = [
     # Trim whitespaces (beginning)
     FilterRule(source=r"/^\s+/", target=""),
@@ -194,6 +201,7 @@ __all__ = [
     "FEATURE_FILTER_RULES",
     "LIVE_FILTER_RULES",
     "NORMALIZE_FEATURE_FILTER_RULES",
+    "ORIGIN_FILTER_RULES",
     "REMASTERED_FILTER_RULES",
     "SUFFIX_FILTER_RULES",
     "TRIM_SYMBOLS_FILTER_RULES",
