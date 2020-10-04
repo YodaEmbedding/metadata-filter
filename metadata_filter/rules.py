@@ -116,7 +116,7 @@ REMASTERED_FILTER_RULES: List[FilterRule] = [
     FilterRule(source=r"/-\sLive\s\/\sRemastered$/", target=""),
     # Mothership (Remastered)
     # How The West Was Won [Remastered]
-    FilterRule(source=r"/[([]Remastered[)\]]$/", target=""),
+    FilterRule(source=r"/[([]Remaster(ed)?[)\]]$/", target=""),
     # A Well Respected Man (2014 Remastered Version)
     # A Well Respected Man [2014 Remastered Version]
     FilterRule(source=r"/[([]\d{4} Re[Mm]astered Version[)\]]$/", target=""),
@@ -125,6 +125,8 @@ REMASTERED_FILTER_RULES: List[FilterRule] = [
     FilterRule(
         source=r"/[([]\d{4} Re-?[Mm]astered Digital Version[)\]]$/", target=""
     ),
+    # In The Court Of The Crimson King (Expanded & Remastered Original Album Mix)
+    FilterRule(source=r"/\([^\(]*Remaster[^\)]*\)$/", target=""),
 ]
 
 LIVE_FILTER_RULES: List[FilterRule] = [
@@ -132,6 +134,8 @@ LIVE_FILTER_RULES: List[FilterRule] = [
     FilterRule(source=r"/-\sLive?$/", target=""),
     # Track - Live at
     FilterRule(source=r"/-\sLive\s.+?$/", target=""),
+    # (Live) or [Live]
+    FilterRule(source=r"/\s[([]Live[)\]]/i", target=""),
 ]
 
 CLEAN_EXPLICIT_FILTER_RULES: List[FilterRule] = [
@@ -169,6 +173,13 @@ VERSION_FILTER_RULES: List[FilterRule] = [
     FilterRule(source=r"/\(Deluxe Edition\)$/", target=""),
     # 6 Foot 7 Foot (Explicit Version)
     FilterRule(source=r"/[([]Explicit Version[)\]]/i", target=""),
+    # Sgt. Pepper's Lonely Hearts Club Band (Super Deluxe Edition)
+    FilterRule(
+        source=r"/\([^\(]*(Deluxe|Edition|Version)[^\)]*\)$/",
+        target="",
+    ),
+    # Blowin' The Blues Away - Rudy Van Gelder Edition
+    FilterRule(source=r"/-\s.*(Deluxe|Edition|Version)$/", target=""),
 ]
 
 SUFFIX_FILTER_RULES: List[FilterRule] = [
