@@ -8,7 +8,7 @@ with open(path.join(root, "README.md"), encoding="utf-8") as f:
 
 setup(
     name="metadata_filter",
-    version="0.0.0",
+    version="0.1.0",
     description="Metadata filters for scrobblers",
     url="https://github.com/YodaEmbedding/metadata-filter",
     author="Mateen Ulhaq",
